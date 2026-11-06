@@ -2,55 +2,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BALANCE ARCHITECTURE</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #f5f4f0;
-      color: #252525;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      padding: 32px 6%;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #ddd;
-    }
-    .logo { letter-spacing: 5px; font-size: 20px; }
-    main { padding: 12vh 8% 15vh; }
-    h1 {
-      font-size: clamp(42px, 8vw, 100px);
-      font-weight: 400;
-      letter-spacing: -4px;
-      line-height: 1.05;
-      max-width: 900px;
-    }
-    p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #777;
-    }
-    footer {
-      padding: 30px 6%;
-      border-top: 1px solid #ddd;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BALANCE ARCHITECTURE — Architecture, Interior, Landscape and Urban Design">
+<title>BALANCE ARCHITECTURE</title>
+<style>
+:root{--paper:#f3f2ee;--ink:#20231f;--muted:#85877f;--line:#d2d2ca}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:calc(100% - 80px);max-width:1440px;margin:auto}
+header{position:absolute;top:0;left:0;width:100%;height:86px;display:flex;align-items:center;justify-content:space-between;color:white;border-bottom:1px solid #ffffff55;z-index:5}
+.logo{font-size:17px;letter-spacing:4px;font-weight:600}.logo small{display:block;font-size:9px;letter-spacing:5px;margin-top:6px;font-weight:400}
+nav{display:flex;gap:34px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+nav a:hover{opacity:.6}
+#language{background:none;border:1px solid #ffffff88;color:white;padding:9px 12px;cursor:pointer;font-size:10px}
+.hero{height:100vh;min-height:680px;max-height:1000px;position:relative;color:white;display:flex;align-items:flex-end;background:linear-gradient(90deg,#0008,#0001),linear-gradient(0deg,#0007,transparent 65%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85') center/cover}
+.hero-content{padding-bottom:85px}
+.eyebrow,.label{font-size:10px;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(60px,9vw,125px);font-weight:400;letter-spacing:-7px;line-height:.9;margin:30px 0}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:50px}
+.hero-bottom p{font-size:14px;line-height:1.8;max-width:370px;color:#eee}
+.scroll{font-size:10px;letter-spacing:2px;text-transform:uppercase}
+section{padding:115px 0}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:end;margin-bottom:75px}
+h2{font-size:clamp(38px,5vw,68px);font-weight:400;letter-spacing:-3px;line-height:1.04;margin:20px 0}
+.intro-copy{font-size:20px;line-height:1.6;max-width:550px}
+.note{font-size:12px;color:var(--muted);line-height:1.7}
+.projects{display:grid;grid-template-columns:1.1fr .9fr;gap:65px 28px}
+.project:nth-child(2){margin-top:130px}
+.project:nth-child(3){margin-top:-75px}
+.project:nth-child(4){margin-top:60px}
+.project-image{overflow:hidden;aspect-ratio:1.3;background:#ddd}
+.project:nth-child(2) .project-image,.project:nth-child(3) .project-image{aspect-ratio:1/1.08}
+.project-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.project:hover img{transform:scale(1.04)}
+.project-info{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:15px;margin-top:15px;gap:15px}
+.project-info strong{font-size:18px;font-weight:400}
+.project-info span{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;text-align:right}
+.dark{background:#252923;color:#f3f2ee}
+.dark .label{color:#b9beb3}
+.statement{display:grid;grid-template-columns:1fr 1fr;gap:10%}
+.statement p{font-size:15px;line-height:1.9;color:#c6c9c1;align-self:end}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid #666;padding-top:25px;margin-top:90px}
+.principles p{font-size:12px;line-height:1.7;color:#bfc2ba}
+.principles b{font-size:11px;letter-spacing:2px;font-weight:400}
+.expertise{display:grid;grid-template-columns:1fr 1fr;gap:10%}
+.expertise-list{border-top:1px solid var(--line)}
+.expertise-list div{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);font-size:22px}
+.expertise-list span{font-size:12px;color:var(--muted)}
+.about-image{height:520px;margin-top:55px;background:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85') center/cover}
+footer{background:#dfe1da;padding:85px 0 30px}
+.footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:80px}
+.footer-title{font-size:clamp(45px,7vw,95px);letter-spacing:-5px;line-height:.95;max-width:750px}
+.contact{font-size:13px;line-height:2}
+.footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#666}
+@media(max-width:760px){
+.wrap{width:calc(100% - 40px)}header{height:70px}nav{display:none}
+.hero{min-height:680px}.hero-content{padding-bottom:55px}h1{letter-spacing:-4px}
+.hero-bottom{display:block}.scroll{display:none}
+section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;gap:25px}
+.projects{grid-template-columns:1fr;gap:42px}
+.project:nth-child(n){margin-top:0}
+.project-image,.project:nth-child(2) .project-image,.project:nth-child(3) .project-image{aspect-ratio:1.15}
+.principles{grid-template-columns:1fr;gap:20px;margin-top:55px}
+.about-image{height:330px}.footer-top{display:block}.contact{margin-top:45px}
+.footer-bottom{flex-wrap:wrap}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">BALANCE</div>
-    <div>ARCHITECTURE</div>
-  </header>
-  <main>
-    <p>ARCHITECTURE · DESIGN · DEVELOPMENT</p>
-    <h1>Creating meaningful spaces for a better balance.</h1>
-    <p>Welcome to BALANCE ARCHITECTURE.</p>
-  </main>
-  <footer>BALANCE ARCHITECTURE © 2026</footer>
+<header class="wrap">
+<a class="logo" href="#home">BALANCE<small>ARCHITECTURE</small></a>
+<nav>
+<a href="#projects" data-en="Projects" data-vi="Dự án">Projects</a>
+<a href="#expertise" data-en="Expertise" data-vi="Lĩnh vực">Expertise</a>
+<a href="#about" data-en="About" data-vi="Giới thiệu">About</a>
+<a href="#contact" data-en="Contact" data-vi="Liên hệ">Contact</a>
+</nav>
+<button id="language">EN / VI</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-content">
+<p class="eyebrow" data-en="Architecture · Interior · Landscape · Urbanism" data-vi="Kiến trúc · Nội thất · Cảnh quan · Quy hoạch">Architecture · Interior · Landscape · Urbanism</p>
+<h1 data-en="Spaces in<br>balance." data-vi="Không gian<br>cân bằng.">Spaces in<br>balance.</h1>
+<div class="hero-bottom">
+<p data-en="Creating meaningful spaces through clarity, character and a thoughtful balance between people and place." data-vi="Kiến tạo không gian có ý nghĩa bằng tư duy mạch lạc, bản sắc riêng và sự cân bằng giữa con người với nơi chốn.">Creating meaningful spaces through clarity, character and a thoughtful balance between people and place.</p>
+<span class="scroll">Scroll to explore ↓</span>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+<div class="intro">
+<div><p class="label">01 / <span data-en="Selected work" data-vi="Dự án tiêu biểu">Selected work</span></p>
+<h2 data-en="Ideas shaped<br>into places." data-vi="Từ ý tưởng<br>đến không gian.">Ideas shaped<br>into places.</h2></div>
+<div>
+<p class="intro-copy" data-en="A selection of places, ideas and collaborations that reflect our approach to architecture and the built environment." data-vi="Tuyển chọn những công trình, ý tưởng và hợp tác thể hiện cách BALANCE tiếp cận kiến trúc và môi trường xây dựng.">A selection of places, ideas and collaborations that reflect our approach to architecture and the built environment.</p>
+<p class="note" data-en="Images and project descriptions are temporary placeholders, ready to be replaced with the studio's own portfolio." data-vi="Hình ảnh và nội dung dự án hiện là tư liệu minh họa, sẽ được thay bằng hồ sơ thực tế của studio.">Images and project descriptions are temporary placeholders, ready to be replaced with the studio's own portfolio.</p>
+</div>
+</div>
+
+<div class="projects">
+<article class="project"><div class="project-image"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85" alt="Contemporary residence"></div><div class="project-info"><strong>Residence / 01</strong><span>Residential · Vietnam</span></div></article>
+<article class="project"><div class="project-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Contemporary interior"></div><div class="project-info"><strong>Living / 02</strong><span>Interior · Concept</span></div></article>
+<article class="project"><div class="project-image"><img src="https://images.unsplash.com/photo-1511818245357-e7c3e7c7e6a3?auto=format&fit=crop&w=1400&q=85" alt="Modern architecture"></div><div class="project-info"><strong>Civic / 03</strong><span>Cultural · Architecture</span></div></article>
+<article class="project"><div class="project-image"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Hospitality interior"></div><div class="project-info"><strong>Hospitality / 04</strong><span>Hospitality · Interior</span></div></article>
+</div>
+</div>
+</section>
+
+<section class="dark">
+<div class="wrap">
+<div class="statement">
+<div><p class="label">02 / OUR APPROACH</p><h2 data-en="Good design is a balance of many things." data-vi="Thiết kế tốt là sự cân bằng của nhiều giá trị.">Good design is a balance of many things.</h2></div>
+<p data-en="We believe meaningful architecture begins with listening — to people, context and purpose. We bring these forces together through clear thinking, considered design and attention to the details that shape everyday experience." data-vi="Chúng tôi tin rằng kiến trúc có ý nghĩa bắt đầu từ sự thấu hiểu — con người, bối cảnh và mục tiêu. BALANCE kết nối những yếu tố ấy bằng tư duy rõ ràng, thiết kế có chọn lọc và sự chăm chút đến từng chi tiết của trải nghiệm thường ngày.">We believe meaningful architecture begins with listening — to people, context and purpose. We bring these forces together through clear thinking, considered design and attention to the details that shape everyday experience.</p>
+</div>
+<div class="principles">
+<div><b>01 — CLARITY</b><p data-en="Purposeful decisions, from the big idea to the smallest detail." data-vi="Quyết định có chủ đích, từ ý tưởng tổng thể đến chi tiết nhỏ nhất.">Purposeful decisions, from the big idea to the smallest detail.</p></div>
+<div><b>02 — CHARACTER</b><p data-en="A distinct identity shaped by place, culture and people." data-vi="Bản sắc riêng được hình thành từ nơi chốn, văn hóa và con người.">A distinct identity shaped by place, culture and people.</p></div>
+<div><b>03 — BALANCE</b><p data-en="Beauty, function, value and responsibility in harmony." data-vi="Sự hài hòa giữa thẩm mỹ, công năng, giá trị và trách nhiệm.">Beauty, function, value and responsibility in harmony.</p></div>
+</div>
+</div>
+</section>
+
+<section id="expertise">
+<div class="wrap expertise">
+<div><p class="label">03 / EXPERTISE</p><h2 data-en="A considered approach across scales." data-vi="Tư duy thiết kế xuyên suốt nhiều quy mô.">A considered approach across scales.</h2></div>
+<div class="expertise-list">
+<div>Architecture <span>01</span></div>
+<div>Interior Design <span>02</span></div>
+<div>Landscape <span>03</span></div>
+<div>Urban Design <span>04</span></div>
+<div>Design Management <span>05</span></div>
+</div>
+</div>
+</section>
+
+<section id="about" style="padding-top:0">
+<div class="wrap"><p class="label">04 / ABOUT BALANCE</p>
+<h2 data-en="Thoughtful design.<br>Lasting value." data-vi="Thiết kế có chiều sâu.<br>Giá trị bền lâu.">Thoughtful design.<br>Lasting value.</h2>
+<div class="about-image"></div>
+</div>
+</section>
+</main>
+
+<footer id="contact">
+<div class="wrap">
+<div class="footer-top">
+<div><p class="label">05 / START A CONVERSATION</p><div class="footer-title" data-en="Let's create something meaningful." data-vi="Cùng kiến tạo những giá trị ý nghĩa.">Let's create something meaningful.</div></div>
+<div class="contact"><b>BALANCE ARCHITECTURE</b><br>Ho Chi Minh City, Vietnam<br><a href="mailto:hello@balancearch.com">hello@balancearch.com</a><br><span data-en="For enquiries and collaborations" data-vi="Trao đổi dự án và hợp tác">For enquiries and collaborations</span></div>
+</div>
+<div class="footer-bottom"><span>© 2026 BALANCE ARCHITECTURE</span><span>Architecture · Design · Development</span><a href="#home">Back to top ↑</a></div>
+</div>
+</footer>
+
+<script>
+let lang="en";
+document.getElementById("language").addEventListener("click",function(){
+lang=lang==="en"?"vi":"en";
+document.documentElement.lang=lang;
+document.querySelectorAll("[data-en][data-vi]").forEach(function(el){el.innerHTML=el.dataset[lang]});
+this.textContent=lang==="en"?"EN / VI":"VI / EN";
+});
+</script>
 </body>
 </html>
