@@ -4,11 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BALANCE ARCHITECTURE — Residence 01">
+<meta name="description" content="Residence 01 — BALANCE ARCHITECTURE">
+<meta name="theme-color" content="#ffffff">
 <title>Residence 01 — BALANCE ARCHITECTURE</title>
 <link rel="icon" href="logo.png">
 
 <style>
+:root {
+  --black: #222;
+  --grey: #888;
+  --light: #e8e8e8;
+  --page: 6%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,8 +29,9 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #222;
+  color: var(--black);
   background: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -30,8 +39,16 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
+/* HEADER */
+
 header {
-  padding: 28px 6%;
+  height: 90px;
+  padding: 0 var(--page);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,160 +56,367 @@ header {
 }
 
 .logo img {
-  width: 150px;
+  width: 155px;
   height: auto;
 }
 
 .back-link {
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  transition: opacity .3s;
 }
 
+.back-link:hover {
+  opacity: .5;
+}
+
+/* PROJECT INTRO */
+
 .project-heading {
-  padding: 85px 8% 55px;
+  padding: 100px 8% 65px;
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 30px;
+  gap: 50px;
+}
+
+.project-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--grey);
+  margin-bottom: 28px;
 }
 
 .project-heading h1 {
-  font-size: clamp(36px, 6vw, 76px);
+  font-size: clamp(45px, 7vw, 92px);
   font-weight: 400;
-  letter-spacing: -2px;
+  letter-spacing: -4px;
+  line-height: 1.02;
 }
 
-.project-heading p {
-  font-size: 13px;
-  color: #777;
-  line-height: 1.8;
+.project-subtitle {
+  font-size: 14px;
+  color: var(--grey);
+  margin-top: 24px;
+  letter-spacing: .3px;
 }
+
+.heading-meta {
+  display: flex;
+  gap: 38px;
+  padding-bottom: 5px;
+}
+
+.heading-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.heading-meta span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #999;
+}
+
+.heading-meta strong {
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* HERO IMAGE */
 
 .hero-image {
   width: 100%;
-  height: 68vh;
-  min-height: 380px;
-  background: #eee;
+  height: 76vh;
+  min-height: 480px;
+  max-height: 850px;
   overflow: hidden;
+  background: #eee;
 }
 
 .hero-image img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.project-info {
-  padding: 90px 8%;
+/* PROJECT DESCRIPTION */
+
+.project-intro {
+  padding: 115px 8%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 60px;
+  gap: 70px;
 }
 
-.project-info h2 {
-  font-size: 12px;
+.section-label {
+  font-size: 10px;
   letter-spacing: 2px;
-  font-weight: 500;
   text-transform: uppercase;
+  color: var(--grey);
 }
 
-.project-info p {
-  font-size: 16px;
-  line-height: 1.9;
-  color: #666;
-  max-width: 680px;
+.intro-content h2 {
+  font-size: clamp(25px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -.7px;
+  max-width: 750px;
+  margin-bottom: 30px;
 }
+
+.intro-content p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #777;
+  max-width: 650px;
+}
+
+/* PROJECT INFORMATION */
 
 .project-details {
+  padding: 45px 8% 100px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 0 8% 90px;
+  border-top: 1px solid var(--light);
 }
 
 .detail-item {
-  border-top: 1px solid #ddd;
-  padding-top: 16px;
+  padding-top: 15px;
 }
 
 .detail-item span {
   display: block;
-  font-size: 11px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
   color: #999;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .detail-item strong {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
 }
 
+/* IMAGE GALLERY */
+
 .gallery {
-  padding: 0 6% 100px;
+  padding: 0 var(--page) 110px;
 }
 
 .gallery img {
   width: 100%;
-  display: block;
-  margin-bottom: 24px;
+  object-fit: cover;
   background: #eee;
 }
 
+.gallery-large {
+  height: 75vh;
+  min-height: 400px;
+  margin-bottom: 25px;
+}
+
+.gallery-large img {
+  height: 100%;
+}
+
+.gallery-caption {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: .5px;
+  margin: 0 0 65px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: start;
+  margin-bottom: 25px;
+}
+
+.gallery-grid img {
+  height: 500px;
+}
+
+.gallery-grid img:last-child {
+  margin-top: 100px;
+}
+
+.gallery-full img {
+  height: 65vh;
+  min-height: 380px;
+}
+
+/* NEXT PROJECT */
+
+.next-project {
+  padding: 80px 8%;
+  border-top: 1px solid var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-project span {
+  display: block;
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.next-project h2 {
+  font-size: clamp(25px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.next-project a {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+
 footer {
-  padding: 35px 6%;
+  padding: 35px var(--page);
   border-top: 1px solid #eee;
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  gap: 20px;
+  font-size: 10px;
   color: #888;
   letter-spacing: 1px;
 }
 
-@media (max-width: 700px) {
-  header {
-    padding: 20px 5%;
-  }
+/* LANGUAGE */
 
-  .logo img {
-    width: 120px;
-  }
+.lang-switch {
+  display: flex;
+  gap: 12px;
+  margin-left: 25px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
 
+.lang-switch button {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font: inherit;
+}
+
+.lang-switch button.active {
+  color: #222;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
   .project-heading {
-    padding: 55px 6% 35px;
+    padding: 75px 6% 45px;
     display: block;
   }
 
-  .project-heading p {
-    margin-top: 15px;
+  .heading-meta {
+    margin-top: 45px;
+    gap: 28px;
+    flex-wrap: wrap;
   }
 
-  .hero-image {
-    height: 45vh;
-  }
-
-  .project-info {
-    padding: 55px 6%;
+  .project-intro {
+    padding: 75px 6%;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
   }
 
   .project-details {
-    padding: 0 6% 55px;
+    padding: 35px 6% 70px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px;
+  }
+
+  .gallery {
+    padding: 0 5% 75px;
+  }
+
+  .gallery-large {
+    height: 55vh;
+  }
+
+  .gallery-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .gallery {
-    padding: 0 5% 55px;
+  .gallery-grid img,
+  .gallery-grid img:last-child {
+    height: 400px;
+    margin-top: 0;
+  }
+
+  .gallery-full img {
+    height: 50vh;
+  }
+
+  .next-project {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 75px;
+  }
+
+  .logo img {
+    width: 125px;
+  }
+
+  .back-link {
+    font-size: 9px;
+  }
+
+  .project-heading h1 {
+    letter-spacing: -2px;
+  }
+
+  .heading-meta {
+    gap: 25px;
+  }
+
+  .hero-image {
+    height: 48vh;
+    min-height: 300px;
+  }
+
+  .project-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:last-child {
+    height: 300px;
+  }
+
+  .gallery-large {
+    min-height: 300px;
+  }
+
+  .next-project {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
   }
 
   footer {
-    padding: 25px 5%;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    line-height: 1.8;
   }
 }
 </style>
@@ -204,61 +428,175 @@ footer {
   <a href="index.html" class="logo">
     <img src="logo.png" alt="BALANCE ARCHITECTURE">
   </a>
-  <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+  <div style="display:flex;align-items:center">
+    <a href="index.html#projects" class="back-link"
+       data-en="← BACK TO PROJECTS"
+       data-vi="← QUAY LẠI DỰ ÁN">← BACK TO PROJECTS</a>
+
+    <div class="lang-switch">
+      <button class="active" onclick="setLang('en')">EN</button>
+      <button onclick="setLang('vi')">VI</button>
+    </div>
+  </div>
 </header>
 
+<main>
+
 <section class="project-heading">
-  <div>
+  <div class="heading-main">
+    <p class="project-number">SELECTED WORK / 01</p>
     <h1>Residence / 01</h1>
-    <p>Private Residence · Architecture</p>
+    <p class="project-subtitle"
+       data-en="Contemporary Private Residence"
+       data-vi="Không gian nhà ở đương đại">
+       Contemporary Private Residence
+    </p>
   </div>
-  <p>01 — Selected Project</p>
+
+  <div class="heading-meta">
+    <div>
+      <span>TYPE</span>
+      <strong data-en="Residential" data-vi="Nhà ở">Residential</strong>
+    </div>
+    <div>
+      <span data-en="LOCATION" data-vi="ĐỊA ĐIỂM">LOCATION</span>
+      <strong>Vietnam</strong>
+    </div>
+    <div>
+      <span data-en="YEAR" data-vi="NĂM">YEAR</span>
+      <strong>2026</strong>
+    </div>
+  </div>
 </section>
 
 <section class="hero-image">
-  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800"
-       alt="Residential architecture">
+  <img
+    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=90"
+    alt="Contemporary residential architecture">
 </section>
 
-<section class="project-info">
-  <h2>Project Overview</h2>
-  <p>
-    A contemporary residential concept exploring the relationship
-    between architecture, natural light and living spaces.
-    The design seeks a balance between simplicity, materiality
-    and the everyday experience of its inhabitants.
-    <br><br>
-    This project presentation is a sample layout. Project information
-    and imagery will be updated with the studio's selected work.
-  </p>
+<section class="project-intro">
+  <div>
+    <p class="section-label"
+       data-en="01 / OVERVIEW"
+       data-vi="01 / TỔNG QUAN">01 / OVERVIEW</p>
+  </div>
+
+  <div class="intro-content">
+    <h2
+      data-en="A thoughtful balance between architecture, nature and everyday living."
+      data-vi="Sự cân bằng tinh tế giữa kiến trúc, thiên nhiên và trải nghiệm sống hằng ngày.">
+      A thoughtful balance between architecture, nature and everyday living.
+    </h2>
+
+    <p
+      data-en="A contemporary residential concept exploring the relationship between architecture, natural light and living spaces. The design seeks a balance between simplicity, materiality and the everyday experience of its inhabitants."
+      data-vi="Một ý tưởng kiến trúc nhà ở đương đại, khám phá mối quan hệ giữa kiến trúc, ánh sáng tự nhiên và không gian sống. Thiết kế hướng đến sự cân bằng giữa tính giản lược, vật liệu và trải nghiệm thường nhật của con người.">
+      A contemporary residential concept exploring the relationship between architecture, natural light and living spaces. The design seeks a balance between simplicity, materiality and the everyday experience of its inhabitants.
+    </p>
+  </div>
 </section>
 
 <section class="project-details">
   <div class="detail-item">
-    <span>Project Type</span>
-    <strong>Private Residence</strong>
+    <span data-en="PROJECT TYPE" data-vi="LOẠI HÌNH">PROJECT TYPE</span>
+    <strong data-en="Private Residence" data-vi="Nhà ở riêng lẻ">Private Residence</strong>
   </div>
+
   <div class="detail-item">
-    <span>Scope</span>
-    <strong>Architecture</strong>
+    <span data-en="DESIGN SCOPE" data-vi="PHẠM VI THIẾT KẾ">DESIGN SCOPE</span>
+    <strong data-en="Architecture" data-vi="Kiến trúc">Architecture</strong>
   </div>
+
   <div class="detail-item">
-    <span>Status</span>
-    <strong>Selected Project</strong>
+    <span data-en="LOCATION" data-vi="ĐỊA ĐIỂM">LOCATION</span>
+    <strong>Vietnam</strong>
+  </div>
+
+  <div class="detail-item">
+    <span data-en="YEAR" data-vi="NĂM">YEAR</span>
+    <strong>2026</strong>
   </div>
 </section>
 
 <section class="gallery">
-  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600"
-       alt="Residential interior">
-  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600"
-       alt="Residential living space">
+
+  <div class="gallery-large">
+    <img
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=90"
+      alt="Residential living space">
+  </div>
+
+  <p class="gallery-caption"
+     data-en="02 / SPATIAL EXPERIENCE"
+     data-vi="02 / TRẢI NGHIỆM KHÔNG GIAN">
+     02 / SPATIAL EXPERIENCE
+  </p>
+
+  <div class="gallery-grid">
+    <img
+      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=90"
+      alt="Contemporary residential interior">
+
+    <img
+      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=90"
+      alt="Modern residential architecture">
+  </div>
+
+  <p class="gallery-caption"
+     data-en="03 / MATERIAL & DETAIL"
+     data-vi="03 / VẬT LIỆU & CHI TIẾT">
+     03 / MATERIAL & DETAIL
+  </p>
+
+  <div class="gallery-full">
+    <img
+      src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1800&q=90"
+      alt="Architectural material and detail">
+  </div>
+
 </section>
+
+<section class="next-project">
+  <div>
+    <span data-en="EXPLORE MORE" data-vi="KHÁM PHÁ THÊM">EXPLORE MORE</span>
+    <h2>BALANCE ARCHITECTURE</h2>
+  </div>
+
+  <a href="index.html#projects"
+     data-en="ALL PROJECTS ↗"
+     data-vi="TẤT CẢ DỰ ÁN ↗">ALL PROJECTS ↗</a>
+</section>
+
+</main>
 
 <footer>
   <span>© 2026 BALANCE ARCHITECTURE</span>
   <a href="index.html">BACK TO HOME ↑</a>
 </footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-en][data-vi]').forEach(element => {
+    element.textContent = element.getAttribute('data-' + lang);
+  });
+
+  document.querySelectorAll('.lang-switch button').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  document.querySelector(
+    '.lang-switch button[onclick="setLang(\'' + lang + '\')"]'
+  ).classList.add('active');
+
+  document.documentElement.lang = lang;
+  localStorage.setItem('balance-lang', lang);
+}
+
+const savedLang = localStorage.getItem('balance-lang') || 'en';
+setLang(savedLang);
+</script>
 
 </body>
 </html>
