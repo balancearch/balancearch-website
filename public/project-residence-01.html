@@ -9,11 +9,15 @@
 <title>Residence 01 — BALANCE ARCHITECTURE</title>
 <link rel="icon" href="logo.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --black: #222;
-  --grey: #888;
-  --light: #e8e8e8;
+  --black: #202020;
+  --grey: #777;
+  --light: #e7e7e7;
   --page: 6%;
 }
 
@@ -28,7 +32,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   color: var(--black);
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -47,7 +51,7 @@ img {
 /* HEADER */
 
 header {
-  height: 90px;
+  height: 88px;
   padding: 0 var(--page);
   display: flex;
   justify-content: space-between;
@@ -60,9 +64,15 @@ header {
   height: auto;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .back-link {
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition: opacity .3s;
 }
@@ -71,10 +81,28 @@ header {
   opacity: .5;
 }
 
-/* PROJECT INTRO */
+.lang-switch {
+  display: flex;
+  gap: 12px;
+}
+
+.lang-switch button {
+  border: none;
+  background: none;
+  color: #999;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+
+.lang-switch button.active {
+  color: #222;
+}
+
+/* PROJECT HEADER */
 
 .project-heading {
-  padding: 100px 8% 65px;
+  padding: 105px 8% 75px;
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -82,179 +110,208 @@ header {
 }
 
 .project-number {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: var(--grey);
   margin-bottom: 28px;
 }
 
 .project-heading h1 {
-  font-size: clamp(45px, 7vw, 92px);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(48px, 7.5vw, 104px);
   font-weight: 400;
-  letter-spacing: -4px;
-  line-height: 1.02;
+  letter-spacing: -5px;
+  line-height: 1.05;
 }
 
 .project-subtitle {
-  font-size: 14px;
+  font-size: 17px;
   color: var(--grey);
-  margin-top: 24px;
-  letter-spacing: .3px;
+  margin-top: 25px;
+  line-height: 1.6;
 }
 
 .heading-meta {
   display: flex;
-  gap: 38px;
-  padding-bottom: 5px;
+  gap: 42px;
+  padding-bottom: 8px;
 }
 
 .heading-meta div {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 12px;
 }
 
 .heading-meta span {
-  font-size: 9px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
   color: #999;
 }
 
 .heading-meta strong {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
 }
 
-/* HERO IMAGE */
+/* FULL BLEED IMAGES */
 
 .hero-image {
   width: 100%;
-  height: 76vh;
+  height: 78vh;
   min-height: 480px;
-  max-height: 850px;
+  max-height: 950px;
   overflow: hidden;
   background: #eee;
 }
 
 .hero-image img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* PROJECT DESCRIPTION */
+/* INTRODUCTION */
 
 .project-intro {
-  padding: 115px 8%;
+  padding: 130px 8%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 70px;
+  gap: 80px;
 }
 
 .section-label {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.8px;
   color: var(--grey);
 }
 
 .intro-content h2 {
-  font-size: clamp(25px, 3vw, 38px);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(29px, 3.5vw, 46px);
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -.7px;
-  max-width: 750px;
-  margin-bottom: 30px;
+  line-height: 1.4;
+  letter-spacing: -1.3px;
+  max-width: 850px;
+  margin-bottom: 35px;
 }
 
 .intro-content p {
-  font-size: 14px;
-  line-height: 1.9;
-  color: #777;
-  max-width: 650px;
+  font-size: 16px;
+  line-height: 2;
+  color: #666;
+  max-width: 700px;
 }
 
-/* PROJECT INFORMATION */
+/* PROJECT DETAILS */
 
 .project-details {
-  padding: 45px 8% 100px;
+  margin: 0 8% 110px;
+  padding-top: 30px;
+  border-top: 1px solid var(--light);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  border-top: 1px solid var(--light);
 }
 
 .detail-item {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .detail-item span {
   display: block;
-  font-size: 9px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
   color: #999;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .detail-item strong {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
 }
 
-/* IMAGE GALLERY */
+/* GALLERY */
 
 .gallery {
-  padding: 0 var(--page) 110px;
+  padding-bottom: 120px;
 }
 
 .gallery img {
-  width: 100%;
   object-fit: cover;
   background: #eee;
 }
 
-.gallery-large {
-  height: 75vh;
-  min-height: 400px;
-  margin-bottom: 25px;
-}
-
-.gallery-large img {
-  height: 100%;
-}
-
 .gallery-caption {
-  font-size: 10px;
-  color: #999;
-  letter-spacing: .5px;
-  margin: 0 0 65px;
+  padding: 20px var(--page) 65px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #777;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 25px;
-  align-items: start;
-  margin-bottom: 25px;
-}
+/* Full width image */
 
-.gallery-grid img {
-  height: 500px;
-}
-
-.gallery-grid img:last-child {
-  margin-top: 100px;
+.gallery-full {
+  width: 100%;
+  height: 76vh;
+  min-height: 420px;
+  max-height: 900px;
+  overflow: hidden;
 }
 
 .gallery-full img {
-  height: 65vh;
-  min-height: 380px;
+  height: 100%;
+}
+
+/* Two image composition */
+
+.gallery-pair {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 3%;
+  align-items: start;
+  padding: 0 8%;
+}
+
+.gallery-pair .image-one {
+  height: 600px;
+}
+
+.gallery-pair .image-two {
+  height: 450px;
+  margin-top: 120px;
+}
+
+/* Offset image */
+
+.gallery-offset {
+  padding: 0 8%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 8%;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.gallery-offset img {
+  height: 540px;
+}
+
+.gallery-offset .offset-caption {
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  color: #777;
+  max-width: 230px;
 }
 
 /* NEXT PROJECT */
 
 .next-project {
-  padding: 80px 8%;
+  padding: 95px 8%;
   border-top: 1px solid var(--light);
   display: flex;
   justify-content: space-between;
@@ -263,20 +320,21 @@ header {
 
 .next-project span {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #999;
   letter-spacing: 1.5px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .next-project h2 {
-  font-size: clamp(25px, 4vw, 48px);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 400;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
 }
 
 .next-project a {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
 }
 
@@ -288,98 +346,17 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 10px;
+  font-size: 11px;
   color: #888;
   letter-spacing: 1px;
-}
-
-/* LANGUAGE */
-
-.lang-switch {
-  display: flex;
-  gap: 12px;
-  margin-left: 25px;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-.lang-switch button {
-  background: none;
-  border: none;
-  color: #999;
-  cursor: pointer;
-  font: inherit;
-}
-
-.lang-switch button.active {
-  color: #222;
 }
 
 /* RESPONSIVE */
 
 @media (max-width: 800px) {
   .project-heading {
-    padding: 75px 6% 45px;
+    padding: 75px 6% 55px;
     display: block;
-  }
-
-  .heading-meta {
-    margin-top: 45px;
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-
-  .project-intro {
-    padding: 75px 6%;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .project-details {
-    padding: 35px 6% 70px;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 35px;
-  }
-
-  .gallery {
-    padding: 0 5% 75px;
-  }
-
-  .gallery-large {
-    height: 55vh;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .gallery-grid img,
-  .gallery-grid img:last-child {
-    height: 400px;
-    margin-top: 0;
-  }
-
-  .gallery-full img {
-    height: 50vh;
-  }
-
-  .next-project {
-    padding: 60px 6%;
-  }
-}
-
-@media (max-width: 500px) {
-  header {
-    height: 75px;
-  }
-
-  .logo img {
-    width: 125px;
-  }
-
-  .back-link {
-    font-size: 9px;
   }
 
   .project-heading h1 {
@@ -387,7 +364,99 @@ footer {
   }
 
   .heading-meta {
+    margin-top: 45px;
+    gap: 35px;
+    flex-wrap: wrap;
+  }
+
+  .project-intro {
+    padding: 85px 6%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .project-details {
+    margin: 0 6% 80px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px;
+  }
+
+  .gallery-full {
+    height: 55vh;
+    min-height: 320px;
+  }
+
+  .gallery-caption {
+    padding: 18px 6% 45px;
+    font-size: 11px;
+  }
+
+  .gallery-pair {
+    padding: 0 5%;
+    gap: 3%;
+  }
+
+  .gallery-pair .image-one {
+    height: 420px;
+  }
+
+  .gallery-pair .image-two {
+    height: 330px;
+    margin-top: 70px;
+  }
+
+  .gallery-offset {
+    padding: 0 6%;
+    grid-template-columns: 1fr;
     gap: 25px;
+    margin-top: 65px;
+  }
+
+  .gallery-offset img {
+    height: 420px;
+  }
+
+  .next-project {
+    padding: 70px 6%;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 72px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .back-link {
+    font-size: 9px;
+  }
+
+  .lang-switch {
+    gap: 7px;
+  }
+
+  .project-heading h1 {
+    font-size: 48px;
+    letter-spacing: -2.5px;
+  }
+
+  .project-subtitle {
+    font-size: 15px;
+  }
+
+  .heading-meta {
+    gap: 24px;
+  }
+
+  .heading-meta strong {
+    font-size: 13px;
   }
 
   .hero-image {
@@ -395,22 +464,41 @@ footer {
     min-height: 300px;
   }
 
+  .intro-content h2 {
+    font-size: 30px;
+  }
+
+  .intro-content p {
+    font-size: 14px;
+  }
+
   .project-details {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .gallery-grid img,
-  .gallery-grid img:last-child {
-    height: 300px;
+  .gallery-full {
+    height: 45vh;
+    min-height: 280px;
   }
 
-  .gallery-large {
-    min-height: 300px;
+  .gallery-pair {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-pair .image-one,
+  .gallery-pair .image-two {
+    height: 320px;
+    margin-top: 0;
+  }
+
+  .gallery-offset img {
+    height: 320px;
   }
 
   .next-project {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
     gap: 30px;
   }
 
@@ -429,7 +517,7 @@ footer {
     <img src="logo.png" alt="BALANCE ARCHITECTURE">
   </a>
 
-  <div style="display:flex;align-items:center">
+  <div class="header-right">
     <a href="index.html#projects" class="back-link"
        data-en="← BACK TO PROJECTS"
        data-vi="← QUAY LẠI DỰ ÁN">← BACK TO PROJECTS</a>
@@ -444,7 +532,7 @@ footer {
 <main>
 
 <section class="project-heading">
-  <div class="heading-main">
+  <div>
     <p class="project-number">SELECTED WORK / 01</p>
     <h1>Residence / 01</h1>
     <p class="project-subtitle"
@@ -472,15 +560,17 @@ footer {
 
 <section class="hero-image">
   <img
-    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=90"
+    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2200&q=90"
     alt="Contemporary residential architecture">
 </section>
 
 <section class="project-intro">
   <div>
     <p class="section-label"
-       data-en="01 / OVERVIEW"
-       data-vi="01 / TỔNG QUAN">01 / OVERVIEW</p>
+       data-en="01 / PROJECT OVERVIEW"
+       data-vi="01 / TỔNG QUAN DỰ ÁN">
+       01 / PROJECT OVERVIEW
+    </p>
   </div>
 
   <div class="intro-content">
@@ -522,35 +612,45 @@ footer {
 
 <section class="gallery">
 
-  <div class="gallery-large">
+  <div class="gallery-full">
     <img
-      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=90"
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2200&q=90"
       alt="Residential living space">
   </div>
 
-  <p class="gallery-caption"
-     data-en="02 / SPATIAL EXPERIENCE"
-     data-vi="02 / TRẢI NGHIỆM KHÔNG GIAN">
-     02 / SPATIAL EXPERIENCE
-  </p>
+  <div class="gallery-caption">
+    <span data-en="02 / SPATIAL EXPERIENCE" data-vi="02 / TRẢI NGHIỆM KHÔNG GIAN">
+      02 / SPATIAL EXPERIENCE
+    </span>
+    <span>RESIDENCE / 01</span>
+  </div>
 
-  <div class="gallery-grid">
-    <img
-      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=90"
+  <div class="gallery-pair">
+    <img class="image-one"
+      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1500&q=90"
       alt="Contemporary residential interior">
 
-    <img
+    <img class="image-two"
       src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=90"
       alt="Modern residential architecture">
   </div>
 
-  <p class="gallery-caption"
-     data-en="03 / MATERIAL & DETAIL"
-     data-vi="03 / VẬT LIỆU & CHI TIẾT">
-     03 / MATERIAL & DETAIL
-  </p>
+  <div class="gallery-caption">
+    <span data-en="03 / MATERIAL & DETAIL" data-vi="03 / VẬT LIỆU & CHI TIẾT">
+      03 / MATERIAL & DETAIL
+    </span>
+    <span>RESIDENCE / 01</span>
+  </div>
 
-  <div class="gallery-full">
+  <div class="gallery-offset">
+    <div>
+      <p class="offset-caption"
+         data-en="The relationship between light, material and space defines the character of the architecture."
+         data-vi="Mối quan hệ giữa ánh sáng, vật liệu và không gian tạo nên bản sắc của công trình.">
+        The relationship between light, material and space defines the character of the architecture.
+      </p>
+    </div>
+
     <img
       src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1800&q=90"
       alt="Architectural material and detail">
