@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="BALANCE ARCHITECTURE — Architecture, Interior, Landscape and Urban Design">
 <title>BALANCE ARCHITECTURE</title>
+<link rel="icon" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BALANCE ARCHITECTURE">
+<meta property="og:description" content="Architecture, Interior, Landscape and Urban Design — Ho Chi Minh City, Vietnam.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
 <style>
 :root{--paper:#f3f2ee;--ink:#20231f;--muted:#85877f;--line:#d2d2ca}
 *{box-sizing:border-box}
@@ -12,11 +17,12 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{width:calc(100% - 80px);max-width:1440px;margin:auto}
-header{position:absolute;top:0;left:0;width:100%;height:86px;display:flex;align-items:center;justify-content:space-between;color:white;border-bottom:1px solid #ffffff55;z-index:5}
+header{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:86px;display:flex;align-items:center;justify-content:space-between;color:white;border-bottom:1px solid #ffffff55;z-index:5}
 .logo img{display:block;width:170px;height:auto;max-height:60px;object-fit:contain}
 nav{display:flex;gap:34px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
 nav a:hover{opacity:.6}
 #language{background:none;border:1px solid #ffffff88;color:white;padding:9px 12px;cursor:pointer;font-size:10px}
+#menu{display:none;background:none;border:0;color:white;font-size:22px;line-height:1;cursor:pointer;padding:6px}
 .hero{height:100vh;min-height:680px;max-height:1000px;position:relative;color:white;display:flex;align-items:flex-end;background:linear-gradient(90deg,#0008,#0001),linear-gradient(0deg,#0007,transparent 65%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85') center/cover}
 .hero-content{padding-bottom:85px}
 .eyebrow,.label{font-size:10px;letter-spacing:3px;text-transform:uppercase}
@@ -33,6 +39,7 @@ h2{font-size:clamp(38px,5vw,68px);font-weight:400;letter-spacing:-3px;line-heigh
 .project:nth-child(2){margin-top:130px}
 .project:nth-child(3){margin-top:-75px}
 .project:nth-child(4){margin-top:60px}
+.projects.is-filtered .project{margin-top:0}
 .project-image{overflow:hidden;aspect-ratio:1.3;background:#ddd}
 .project:nth-child(2) .project-image,.project:nth-child(3) .project-image{aspect-ratio:1/1.08}
 .project-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
@@ -46,29 +53,20 @@ h2{font-size:clamp(38px,5vw,68px);font-weight:400;letter-spacing:-3px;line-heigh
 .statement p{font-size:15px;line-height:1.9;color:#c6c9c1;align-self:end}
 .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid #666;padding-top:25px;margin-top:90px}
 .principles p{font-size:12px;line-height:1.7;color:#bfc2ba}
-.principles b{font-size:11px;letter-spacing:2px;font-weight:400}
+.principles b{font-size:11px;letter-spacing:2px;font-weight:400;text-transform:uppercase}
 .expertise{display:grid;grid-template-columns:1fr 1fr;gap:10%}
 .expertise-list{border-top:1px solid var(--line)}
 .expertise-list div{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);font-size:22px}
+.expertise-list i{font-style:normal}
 .expertise-list span{font-size:12px;color:var(--muted)}
+.about-copy{font-size:20px;line-height:1.6;max-width:640px;margin:0}
 .about-image{height:520px;margin-top:55px;background:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85') center/cover}
 footer{background:#dfe1da;padding:85px 0 30px}
 .footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:80px}
 .footer-title{font-size:clamp(45px,7vw,95px);letter-spacing:-5px;line-height:.95;max-width:750px}
 .contact{font-size:13px;line-height:2}
 .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#666}
-@media(max-width:760px){
-.wrap{width:calc(100% - 40px)}header{height:70px}nav{display:none}
-.hero{min-height:680px}.hero-content{padding-bottom:55px}h1{letter-spacing:-4px}
-.hero-bottom{display:block}.scroll{display:none}
-section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;gap:25px}
-.projects{grid-template-columns:1fr;gap:42px}
-.project:nth-child(n){margin-top:0}
-.project-image,.project:nth-child(2) .project-image,.project:nth-child(3) .project-image{aspect-ratio:1.15}
-.principles{grid-template-columns:1fr;gap:20px;margin-top:55px}
-.about-image{height:330px}.footer-top{display:block}.contact{margin-top:45px}
-.footer-bottom{flex-wrap:wrap}
-}.project-filters{
+.project-filters{
   display:flex;
   flex-wrap:wrap;
   gap:12px 28px;
@@ -76,7 +74,6 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
   border-bottom:1px solid #ddd;
   padding-bottom:18px;
 }
-
 .project-filters .filter{
   background:none;
   border:0;
@@ -88,14 +85,30 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
   cursor:pointer;
   transition:color .3s;
 }
-
 .project-filters .filter:hover,
 .project-filters .filter.active{
   color:#111;
 }
-
 .project-filters .filter.active{
   border-bottom:1px solid #111;
+}
+@media(max-width:760px){
+.wrap{width:calc(100% - 40px)}header{height:70px}
+#menu{display:block;margin-left:auto;margin-right:12px}
+nav{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:#252923;padding:6px 20px}
+nav.open{display:flex}
+nav a{padding:16px 0;border-bottom:1px solid #ffffff22;font-size:11px}
+nav a:last-child{border-bottom:0}
+.hero{min-height:680px}.hero-content{padding-bottom:55px}h1{letter-spacing:-4px}
+.hero-bottom{display:block}.scroll{display:none}
+section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;gap:25px}
+.projects{grid-template-columns:1fr;gap:42px}
+.project:nth-child(n){margin-top:0}
+.project-image,.project:nth-child(2) .project-image,.project:nth-child(3) .project-image{aspect-ratio:1.15}
+.principles{grid-template-columns:1fr;gap:20px;margin-top:55px}
+.about-image{height:330px}.about-copy{font-size:17px}.footer-top{display:block}.contact{margin-top:45px}
+.footer-bottom{flex-wrap:wrap}
+.project-filters{gap:10px 20px}
 }
 </style>
 </head>
@@ -104,12 +117,13 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
 <a class="logo" href="#home">
   <img src="logo.png" alt="BALANCE ARCHITECTURE">
 </a>
-<nav>
+<nav id="nav">
 <a href="#projects" data-en="Projects" data-vi="Dự án">Projects</a>
 <a href="#expertise" data-en="Expertise" data-vi="Lĩnh vực">Expertise</a>
 <a href="#about" data-en="About" data-vi="Giới thiệu">About</a>
 <a href="#contact" data-en="Contact" data-vi="Liên hệ">Contact</a>
 </nav>
+<button id="menu" aria-label="Menu" aria-expanded="false">☰</button>
 <button id="language">EN / VI</button>
 </header>
 
@@ -120,7 +134,7 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
 <h1 data-en="Spaces in<br>balance." data-vi="Không gian<br>cân bằng.">Spaces in<br>balance.</h1>
 <div class="hero-bottom">
 <p data-en="Creating meaningful spaces through clarity, character and a thoughtful balance between people and place." data-vi="Kiến tạo không gian có ý nghĩa bằng tư duy mạch lạc, bản sắc riêng và sự cân bằng giữa con người với nơi chốn.">Creating meaningful spaces through clarity, character and a thoughtful balance between people and place.</p>
-<span class="scroll">Scroll to explore ↓</span>
+<span class="scroll" data-en="Scroll to explore ↓" data-vi="Cuộn để khám phá ↓">Scroll to explore ↓</span>
 </div>
 </div>
 </section>
@@ -136,53 +150,54 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
 </div>
 </div>
 <div class="project-filters">
-  <button class="filter active" data-filter="all">All</button>
-  <button class="filter" data-filter="residential">Residential</button>
-  <button class="filter" data-filter="interior">Interior</button>
-  <button class="filter" data-filter="cultural">Cultural</button>
-  <button class="filter" data-filter="hospitality">Hospitality</button>
-  <button class="filter" data-filter="commercial">Commercial</button>
-  <button class="filter" data-filter="mixed-use">Mixed-use</button>
-  <button class="filter" data-filter="master-planning">Master Planning</button>
+  <button class="filter active" data-filter="all" data-en="All" data-vi="Tất cả">All</button>
+  <button class="filter" data-filter="residential" data-en="Residential" data-vi="Nhà ở">Residential</button>
+  <button class="filter" data-filter="interior" data-en="Interior" data-vi="Nội thất">Interior</button>
+  <button class="filter" data-filter="cultural" data-en="Cultural" data-vi="Văn hóa">Cultural</button>
+  <button class="filter" data-filter="hospitality" data-en="Hospitality" data-vi="Khách sạn &amp; Nghỉ dưỡng">Hospitality</button>
+  <!-- Ba nhóm dưới đây đang ẩn vì chưa có dự án. Khi có công trình thật, xoá chữ "hidden" để hiện lại. -->
+  <button class="filter" data-filter="commercial" data-en="Commercial" data-vi="Thương mại" hidden>Commercial</button>
+  <button class="filter" data-filter="mixed-use" data-en="Mixed-use" data-vi="Hỗn hợp" hidden>Mixed-use</button>
+  <button class="filter" data-filter="master-planning" data-en="Master Planning" data-vi="Quy hoạch tổng thể" hidden>Master Planning</button>
 </div>
 <div class="projects">
   <article class="project" data-category="residential">
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85" alt="Contemporary residence">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85" alt="Contemporary residence" loading="lazy">
     </div>
     <div class="project-info">
       <strong>Residence / 01</strong>
-      <span>Residential · Vietnam</span>
+      <span data-en="Residential · Vietnam" data-vi="Nhà ở · Việt Nam">Residential · Vietnam</span>
     </div>
   </article>
 
   <article class="project" data-category="interior">
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Contemporary interior">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Contemporary interior" loading="lazy">
     </div>
     <div class="project-info">
       <strong>Living / 02</strong>
-      <span>Interior · Concept</span>
+      <span data-en="Interior · Concept" data-vi="Nội thất · Ý tưởng">Interior · Concept</span>
     </div>
   </article>
 
   <article class="project" data-category="cultural">
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1511818245357-e7c3e7c7e6a3?auto=format&fit=crop&w=1400&q=85" alt="Modern architecture">
+      <img src="https://images.unsplash.com/photo-1511818245357-e7c3e7c7e6a3?auto=format&fit=crop&w=1400&q=85" alt="Modern architecture" loading="lazy">
     </div>
     <div class="project-info">
       <strong>Civic / 03</strong>
-      <span>Cultural · Architecture</span>
+      <span data-en="Cultural · Architecture" data-vi="Văn hóa · Kiến trúc">Cultural · Architecture</span>
     </div>
   </article>
 
   <article class="project" data-category="hospitality">
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Hospitality interior">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Hospitality interior" loading="lazy">
     </div>
     <div class="project-info">
       <strong>Hospitality / 04</strong>
-      <span>Hospitality · Interior</span>
+      <span data-en="Hospitality · Interior" data-vi="Khách sạn · Nội thất">Hospitality · Interior</span>
     </div>
   </article>
 </div>
@@ -193,33 +208,34 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
 <section class="dark">
 <div class="wrap">
 <div class="statement">
-<div><p class="label">02 / OUR APPROACH</p><h2 data-en="Good design is a balance of many things." data-vi="Thiết kế tốt là sự cân bằng của nhiều giá trị.">Good design is a balance of many things.</h2></div>
+<div><p class="label">02 / <span data-en="Our approach" data-vi="Cách tiếp cận">Our approach</span></p><h2 data-en="Good design is a balance of many things." data-vi="Thiết kế tốt là sự cân bằng của nhiều giá trị.">Good design is a balance of many things.</h2></div>
 <p data-en="We believe meaningful architecture begins with listening — to people, context and purpose. We bring these forces together through clear thinking, considered design and attention to the details that shape everyday experience." data-vi="Chúng tôi tin rằng kiến trúc có ý nghĩa bắt đầu từ sự thấu hiểu — con người, bối cảnh và mục tiêu. BALANCE kết nối những yếu tố ấy bằng tư duy rõ ràng, thiết kế có chọn lọc và sự chăm chút đến từng chi tiết của trải nghiệm thường ngày.">We believe meaningful architecture begins with listening — to people, context and purpose. We bring these forces together through clear thinking, considered design and attention to the details that shape everyday experience.</p>
 </div>
 <div class="principles">
-<div><b>01 — CLARITY</b><p data-en="Purposeful decisions, from the big idea to the smallest detail." data-vi="Quyết định có chủ đích, từ ý tưởng tổng thể đến chi tiết nhỏ nhất.">Purposeful decisions, from the big idea to the smallest detail.</p></div>
-<div><b>02 — CHARACTER</b><p data-en="A distinct identity shaped by place, culture and people." data-vi="Bản sắc riêng được hình thành từ nơi chốn, văn hóa và con người.">A distinct identity shaped by place, culture and people.</p></div>
-<div><b>03 — BALANCE</b><p data-en="Beauty, function, value and responsibility in harmony." data-vi="Sự hài hòa giữa thẩm mỹ, công năng, giá trị và trách nhiệm.">Beauty, function, value and responsibility in harmony.</p></div>
+<div><b>01 — <span data-en="Clarity" data-vi="Mạch lạc">Clarity</span></b><p data-en="Purposeful decisions, from the big idea to the smallest detail." data-vi="Quyết định có chủ đích, từ ý tưởng tổng thể đến chi tiết nhỏ nhất.">Purposeful decisions, from the big idea to the smallest detail.</p></div>
+<div><b>02 — <span data-en="Character" data-vi="Bản sắc">Character</span></b><p data-en="A distinct identity shaped by place, culture and people." data-vi="Bản sắc riêng được hình thành từ nơi chốn, văn hóa và con người.">A distinct identity shaped by place, culture and people.</p></div>
+<div><b>03 — <span data-en="Balance" data-vi="Cân bằng">Balance</span></b><p data-en="Beauty, function, value and responsibility in harmony." data-vi="Sự hài hòa giữa thẩm mỹ, công năng, giá trị và trách nhiệm.">Beauty, function, value and responsibility in harmony.</p></div>
 </div>
 </div>
 </section>
 
 <section id="expertise">
 <div class="wrap expertise">
-<div><p class="label">03 / EXPERTISE</p><h2 data-en="A considered approach across scales." data-vi="Tư duy thiết kế xuyên suốt nhiều quy mô.">A considered approach across scales.</h2></div>
+<div><p class="label">03 / <span data-en="Expertise" data-vi="Lĩnh vực">Expertise</span></p><h2 data-en="A considered approach across scales." data-vi="Tư duy thiết kế xuyên suốt nhiều quy mô.">A considered approach across scales.</h2></div>
 <div class="expertise-list">
-<div>Architecture <span>01</span></div>
-<div>Interior Design <span>02</span></div>
-<div>Landscape <span>03</span></div>
-<div>Urban Design <span>04</span></div>
-<div>Design Management <span>05</span></div>
+<div><i data-en="Architecture" data-vi="Kiến trúc">Architecture</i> <span>01</span></div>
+<div><i data-en="Interior Design" data-vi="Thiết kế nội thất">Interior Design</i> <span>02</span></div>
+<div><i data-en="Landscape" data-vi="Cảnh quan">Landscape</i> <span>03</span></div>
+<div><i data-en="Urban Design" data-vi="Thiết kế đô thị">Urban Design</i> <span>04</span></div>
+<div><i data-en="Design Management" data-vi="Quản lý thiết kế">Design Management</i> <span>05</span></div>
 </div>
 </div>
 </section>
 
 <section id="about" style="padding-top:0">
-<div class="wrap"><p class="label">04 / ABOUT BALANCE</p>
+<div class="wrap"><p class="label">04 / <span data-en="About Balance" data-vi="Giới thiệu BALANCE">About Balance</span></p>
 <h2 data-en="Thoughtful design.<br>Lasting value." data-vi="Thiết kế có chiều sâu.<br>Giá trị bền lâu.">Thoughtful design.<br>Lasting value.</h2>
+<p class="about-copy" data-en="BALANCE is an architecture and design studio in Ho Chi Minh City, working across architecture, interior, landscape and urban design. Every project is a balance between people, place and purpose." data-vi="BALANCE là studio kiến trúc và thiết kế tại Thành phố Hồ Chí Minh, làm việc xuyên suốt các lĩnh vực kiến trúc, nội thất, cảnh quan và thiết kế đô thị. Mỗi dự án là sự cân bằng giữa con người, nơi chốn và mục tiêu.">BALANCE is an architecture and design studio in Ho Chi Minh City, working across architecture, interior, landscape and urban design. Every project is a balance between people, place and purpose.</p>
 <div class="about-image"></div>
 </div>
 </section>
@@ -228,24 +244,48 @@ section{padding:80px 0}.intro,.statement,.expertise{grid-template-columns:1fr;ga
 <footer id="contact">
 <div class="wrap">
 <div class="footer-top">
-<div><p class="label">05 / START A CONVERSATION</p><div class="footer-title" data-en="Let's create something meaningful." data-vi="Cùng kiến tạo những giá trị ý nghĩa.">Let's create something meaningful.</div></div>
+<div><p class="label">05 / <span data-en="Start a conversation" data-vi="Bắt đầu trò chuyện">Start a conversation</span></p><div class="footer-title" data-en="Let's create something meaningful." data-vi="Cùng kiến tạo những giá trị ý nghĩa.">Let's create something meaningful.</div></div>
 <div class="contact"><b>BALANCE ARCHITECTURE</b><br>Ho Chi Minh City, Vietnam<br><a href="mailto:hello@balancearch.com">hello@balancearch.com</a><br><span data-en="For enquiries and collaborations" data-vi="Trao đổi dự án và hợp tác">For enquiries and collaborations</span></div>
 </div>
-<div class="footer-bottom"><span>© 2026 BALANCE ARCHITECTURE</span><span>Architecture · Design · Development</span><a href="#home">Back to top ↑</a></div>
+<div class="footer-bottom"><span>© 2026 BALANCE ARCHITECTURE</span><span data-en="Architecture · Design · Development" data-vi="Kiến trúc · Thiết kế · Phát triển">Architecture · Design · Development</span><a href="#home" data-en="Back to top ↑" data-vi="Lên đầu trang ↑">Back to top ↑</a></div>
 </div>
 </footer>
 
 <script>
+/* Ngôn ngữ EN / VI (ghi nhớ lựa chọn khi tải lại trang) */
 let lang="en";
+try{ if(localStorage.getItem("lang")==="vi") lang="vi"; }catch(e){}
+
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-en][data-vi]").forEach(function(el){el.innerHTML=el.dataset[lang]});
+  document.getElementById("language").textContent=lang==="en"?"EN / VI":"VI / EN";
+}
+if(lang==="vi") applyLang();
+
 document.getElementById("language").addEventListener("click",function(){
-lang=lang==="en"?"vi":"en";
-document.documentElement.lang=lang;
-document.querySelectorAll("[data-en][data-vi]").forEach(function(el){el.innerHTML=el.dataset[lang]});
-this.textContent=lang==="en"?"EN / VI":"VI / EN";
+  lang=lang==="en"?"vi":"en";
+  try{ localStorage.setItem("lang",lang); }catch(e){}
+  applyLang();
 });
 </script>
 
 <script>
+/* Menu trên điện thoại */
+const nav=document.getElementById('nav');
+const menuBtn=document.getElementById('menu');
+menuBtn.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',open?'true':'false');
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+}));
+</script>
+
+<script>
+/* Lọc dự án */
 document.querySelectorAll('.project-filters .filter').forEach(button => {
   button.addEventListener('click', () => {
     const selected = button.dataset.filter;
@@ -255,6 +295,8 @@ document.querySelectorAll('.project-filters .filter').forEach(button => {
     });
 
     button.classList.add('active');
+
+    document.querySelector('.projects').classList.toggle('is-filtered', selected !== 'all');
 
     document.querySelectorAll('.projects .project').forEach(project => {
       const category = project.dataset.category;
