@@ -244,5 +244,25 @@ document.querySelectorAll("[data-en][data-vi]").forEach(function(el){el.innerHTM
 this.textContent=lang==="en"?"EN / VI":"VI / EN";
 });
 </script>
+
+<script>
+document.querySelectorAll('.project-filters .filter').forEach(button => {
+  button.addEventListener('click', () => {
+    const selected = button.dataset.filter;
+
+    document.querySelectorAll('.project-filters .filter').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    document.querySelectorAll('.projects .project').forEach(project => {
+      const category = project.dataset.category;
+      project.style.display =
+        selected === 'all' || category === selected ? '' : 'none';
+    });
+  });
+});
+</script>
 </body>
 </html>
