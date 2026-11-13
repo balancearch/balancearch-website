@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BALANCE ARCHITECTURE — Residence 01">
+<title>Residence 01 — BALANCE ARCHITECTURE</title>
+<link rel="icon" href="logo.png">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 28px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.back-link {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-heading {
+  padding: 85px 8% 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+}
+
+.project-heading h1 {
+  font-size: clamp(36px, 6vw, 76px);
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.project-heading p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+}
+
+.hero-image {
+  width: 100%;
+  height: 68vh;
+  min-height: 380px;
+  background: #eee;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+}
+
+.project-info h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.project-info p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #666;
+  max-width: 680px;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 8% 90px;
+}
+
+.detail-item {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+}
+
+.detail-item span {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.detail-item strong {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.gallery {
+  padding: 0 6% 100px;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  margin-bottom: 24px;
+  background: #eee;
+}
+
+footer {
+  padding: 35px 6%;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 20px 5%;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .project-heading {
+    padding: 55px 6% 35px;
+    display: block;
+  }
+
+  .project-heading p {
+    margin-top: 15px;
+  }
+
+  .hero-image {
+    height: 45vh;
+  }
+
+  .project-info {
+    padding: 55px 6%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-details {
+    padding: 0 6% 55px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery {
+    padding: 0 5% 55px;
+  }
+
+  footer {
+    padding: 25px 5%;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="BALANCE ARCHITECTURE">
+  </a>
+  <a href="index.html#projects" class="back-link">← Back to Projects</a>
+</header>
+
+<section class="project-heading">
+  <div>
+    <h1>Residence / 01</h1>
+    <p>Private Residence · Architecture</p>
+  </div>
+  <p>01 — Selected Project</p>
+</section>
+
+<section class="hero-image">
+  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800"
+       alt="Residential architecture">
+</section>
+
+<section class="project-info">
+  <h2>Project Overview</h2>
+  <p>
+    A contemporary residential concept exploring the relationship
+    between architecture, natural light and living spaces.
+    The design seeks a balance between simplicity, materiality
+    and the everyday experience of its inhabitants.
+    <br><br>
+    This project presentation is a sample layout. Project information
+    and imagery will be updated with the studio's selected work.
+  </p>
+</section>
+
+<section class="project-details">
+  <div class="detail-item">
+    <span>Project Type</span>
+    <strong>Private Residence</strong>
+  </div>
+  <div class="detail-item">
+    <span>Scope</span>
+    <strong>Architecture</strong>
+  </div>
+  <div class="detail-item">
+    <span>Status</span>
+    <strong>Selected Project</strong>
+  </div>
+</section>
+
+<section class="gallery">
+  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600"
+       alt="Residential interior">
+  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600"
+       alt="Residential living space">
+</section>
+
+<footer>
+  <span>© 2026 BALANCE ARCHITECTURE</span>
+  <a href="index.html">BACK TO HOME ↑</a>
+</footer>
+
+</body>
+</html>
